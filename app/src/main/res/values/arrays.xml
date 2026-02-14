@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Pad Colors Array -->
+    <integer-array name="pad_colors">
+        <item>@color/pad_1</item>
+        <item>@color/pad_2</item>
+        <item>@color/pad_3</item>
+        <item>@color/pad_4</item>
+        <item>@color/pad_5</item>
+        <item>@color/pad_6</item>
+        <item>@color/pad_7</item>
+        <item>@color/pad_8</item>
+        <item>@color/pad_9</item>
+        <item>@color/pad_10</item>
+        <item>@color/pad_11</item>
+        <item>@color/pad_12</item>
+        <item>@color/pad_13</item>
+        <item>@color/pad_14</item>
+        <item>@color/pad_15</item>
+        <item>@color/pad_16</item>
+    </integer-array>
+</resources>
