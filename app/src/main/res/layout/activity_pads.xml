@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    tools:context=".ui.pads.PadsActivity">
+
+    <!-- Top Control Bar -->
+    <LinearLayout
+        android:id="@+id/topControlBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="@dimen/padding_small"
+        android:background="@color/surface"
+        android:gravity="center_vertical">
+
+        <!-- BPM Controls -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <TextView
+                android:id="@+id/tvBpmLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="BPM"
+                android:textSize="@dimen/text_size_small"
+                android:textColor="@color/text_secondary" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center">
+
+                <ImageButton
+                    android:id="@+id/btnBpmDecrease"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:src="@android:drawable/ic_menu_revert"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:contentDescription="Decrease BPM" />
+
+                <TextView
+                    android:id="@+id/tvBpm"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/spacing_small"
+                    android:layout_marginEnd="@dimen/spacing_small"
+                    android:text="120"
+                    android:textSize="@dimen/text_size_large"
+                    android:textStyle="bold"
+                    android:textColor="@color/text_primary"
+                    android:minWidth="50dp"
+                    android:gravity="center" />
+
+                <ImageButton
+                    android:id="@+id/btnBpmIncrease"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:src="@android:drawable/ic_menu_add"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:contentDescription="Increase BPM" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <!-- Record Button -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnRecord"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/spacing_small"
+            android:text="@string/btn_record"
+            app:icon="@android:drawable/presence_video_online"
+            app:iconGravity="textStart" />
+
+        <!-- Effects Button -->
+        <ImageButton
+            android:id="@+id/btnEffects"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_margin="@dimen/spacing_small"
+            android:src="@android:drawable/ic_menu_edit"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="@string/btn_effects" />
+
+    </LinearLayout>
+
+    <!-- Pad Grid Container -->
+    <FrameLayout
+        android:id="@+id/padGridContainer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/topControlBar"
+        android:layout_above="@id/bottomControlBar"
+        android:padding="@dimen/padding_small">
+
+        <include layout="@layout/pad_grid_layout" />
+
+    </FrameLayout>
+
+    <!-- Bottom Control Bar -->
+    <LinearLayout
+        android:id="@+id/bottomControlBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal"
+        android:padding="@dimen/padding_small"
+        android:background="@color/surface"
+        android:gravity="center">
+
+        <!-- Volume Slider -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:layout_marginEnd="@dimen/spacing_medium">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/volume_label"
+                android:textSize="@dimen/text_size_small"
+                android:textColor="@color/text_secondary" />
+
+            <com.google.android.material.slider.Slider
+                android:id="@+id/sliderVolume"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:valueFrom="0"
+                android:valueTo="100"
+                android:value="100"
+                android:stepSize="1" />
+
+        </LinearLayout>
+
+        <!-- Toggle Buttons -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnMetronome"
+                style="@style/Widget.Material3.Button.IconButton"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_margin="@dimen/spacing_tiny"
+                app:icon="@android:drawable/ic_lock_silent_mode_off"
+                app:iconGravity="textStart"
+                android:contentDescription="@string/btn_metronome" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnLoop"
+                style="@style/Widget.Material3.Button.IconButton"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_margin="@dimen/spacing_tiny"
+                app:icon="@android:drawable/ic_menu_rotate"
+                app:iconGravity="textStart"
+                android:contentDescription="@string/btn_loop" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>

@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    tools:context=".ui.settings.SettingsActivity">
+
+    <!-- Toolbar -->
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/surface"
+        app:title="@string/settings_title"
+        app:navigationIcon="@android:drawable/ic_menu_close_clear_cancel"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- Settings ScrollView -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@id/toolbar"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="@dimen/padding_default">
+
+            <!-- Audio Settings Section -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/category_audio"
+                android:textSize="@dimen/text_size_small"
+                android:textStyle="bold"
+                android:textColor="@color/secondary"
+                android:layout_marginBottom="@dimen/spacing_small" />
+
+            <com.google.android.material.switchmaterial.SwitchMaterial
+                android:id="@+id/switchAnimations"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/setting_animations"
+                android:checked="true"
+                android:layout_marginBottom="@dimen/spacing_small" />
+
+            <com.google.android.material.switchmaterial.SwitchMaterial
+                android:id="@+id/switchHaptic"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/setting_haptic"
+                android:checked="true"
+                android:layout_marginBottom="@dimen/spacing_large" />
+
+            <!-- Premium Section -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/category_monetization"
+                android:textSize="@dimen/text_size_small"
+                android:textStyle="bold"
+                android:textColor="@color/secondary"
+                android:layout_marginBottom="@dimen/spacing_small" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnGoPremium"
+                style="@style/Widget.MusicPadStudio.Button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/setting_premium"
+                android:layout_marginBottom="@dimen/spacing_large" />
+
+            <!-- About Section -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/category_about"
+                android:textSize="@dimen/text_size_small"
+                android:textStyle="bold"
+                android:textColor="@color/secondary"
+                android:layout_marginBottom="@dimen/spacing_small" />
+
+            <TextView
+                android:id="@+id/tvVersion"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/setting_version"
+                android:textSize="@dimen/text_size_normal"
+                android:textColor="@color/text_secondary"
+                android:layout_marginBottom="@dimen/spacing_small" />
+
+            <TextView
+                android:id="@+id/tvVersionNumber"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="v1.0.0"
+                android:textSize="@dimen/text_size_normal"
+                android:textColor="@color/text_primary"
+                android:layout_marginBottom="@dimen/spacing_small" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
