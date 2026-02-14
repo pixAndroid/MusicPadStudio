@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/padCard"
+    android:layout_width="0dp"
+    android:layout_height="0dp"
+    android:layout_margin="@dimen/pad_margin"
+    android:clickable="true"
+    android:focusable="true"
+    app:cardElevation="@dimen/pad_elevation"
+    app:cardCornerRadius="@dimen/pad_corner_radius"
+    app:cardBackgroundColor="@color/pad_default"
+    app:strokeWidth="2dp"
+    app:strokeColor="@color/primary_light">
+
+    <TextView
+        android:id="@+id/tvPadName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="Pad"
+        android:textSize="@dimen/pad_text_size"
+        android:textColor="@color/text_primary"
+        android:textStyle="bold"
+        android:gravity="center" />
+
+</com.google.android.material.card.MaterialCardView>

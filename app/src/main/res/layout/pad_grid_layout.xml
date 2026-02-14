@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/padGrid"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:rowCount="4"
+    android:columnCount="8"
+    android:alignmentMode="alignMargins"
+    android:columnOrderPreserved="false"
+    android:padding="@dimen/pad_margin">
+
+    <!-- Pads will be dynamically added programmatically -->
+    <!-- This is a placeholder layout for the 4x8 grid structure -->
+
+</GridLayout>
